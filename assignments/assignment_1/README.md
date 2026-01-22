@@ -1,9 +1,6 @@
 # Assignment 1 – Mock Project Setup
 
-This README documents the exact sequence of commands used to create the
-Assignment 1 project structure.  
-All commands can be run line-by-line in a Unix shell to reproduce the directory
-layout and placeholder files.
+This README documents the exact sequence of commands used to create the Assignment 1 mock project structure.  
 
 ---
 
