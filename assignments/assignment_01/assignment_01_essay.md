@@ -1,1 +1,0 @@
-# Course goals and plans
