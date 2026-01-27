@@ -1,4 +1,4 @@
-# Supercomputing for Sciences Benchmark
+# Supercomputing for Science
 
 —
 
