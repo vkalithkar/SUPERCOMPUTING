@@ -1,6 +1,7 @@
 # Assignment 1 – Mock Project Setup
 
-This README documents the exact sequence of commands used to create the Assignment 1 mock project structure.  
+This README documents the exact sequence of commands used to create the
+Assignment 1 project structure.  
 
 ---
 
@@ -19,8 +20,8 @@ mkdir assignments
 cd assignments
 
 # Create directory for first assignment
-mkdir assignment_1
-cd assignment_1
+mkdir assignment_01
+cd assignment_01
 
 # Create README file for this command log Task 2
 touch README.md
@@ -58,11 +59,3 @@ cd ..
 git add -A
 git commit -m "Assignment 1 mock project setup"
 git push
-
-
-
-
-
-
-
-
