@@ -45,6 +45,8 @@ git push
 exit
 
 #------------------------- Now LOCALLY  --------------------------
+# Sync with git
+git pull
 
 # Log into FTP for NCBI
 ftp ftp.ncbi.nlm.nih.gov
