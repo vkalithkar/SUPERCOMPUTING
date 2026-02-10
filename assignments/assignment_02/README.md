@@ -1,10 +1,10 @@
-## Command Log
-Vandana Kalithkar  
-02/10/2026  
-Assignment 2   
-<br />
-### Task 1
+# Assignment 2 – HPC Access & Remote File Transfer
 
+**Vandana Kalithkar**  
+02/10/2026  
+
+## Command Log
+### Task 1
 ```bash
 #------------------------- STARTING LOCALLY  --------------------------
 
