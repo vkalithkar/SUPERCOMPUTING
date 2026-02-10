@@ -238,3 +238,4 @@ exit
 ```
 
 #### Reflection
+I find that I feel much more comfortable with the bash program/syntax usage, and I'm able to work and navigate much faster. The one thing that didn't work during this assignment was using command-line FTP to communicate with NCBI servers, due to the Windows fire wall issue. The Filezilla approach was successful. The actual only difficulty I was having was with keeping my memory straight between what was being pushed to the GitHub repository via my local machine and change made to the cloned repo on Bora. So far, I've only had to handle one merge conflict (forgot to git pull) but have learned my lesson since. The only thing I would change is probably adding a sort of Task/Subtask to the Assignment_02 document to add the data folder (within assignment_02) to the .gitignore, since it's not immediately obvious. However, I know it's bad practice to push data to GitHub, so I went ahead and made that change.
