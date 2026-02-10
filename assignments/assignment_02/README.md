@@ -1,5 +1,8 @@
 ## Command Log
-
+Vandana Kalithkar
+02/10/2026
+Assignment 2
+<br />
 ### Task 1
 
 ```bash
@@ -56,7 +59,7 @@ exit
 ### Task 2
 
 The following did not work to complete Task 2; skip to GUI FTP
-
+(Git Bash FTP client failed due to Windows PORT issues, so I used FileZilla to complete the transfer as permitted)
 ``` bash
 
 #------------------------- NOW LOCALLY  --------------------------
@@ -224,4 +227,14 @@ git pull
 git add -A
 git commit -m "assignment_02 README.md update"
 git push
+
+bora
+# Enter password
+
+# -------------------------  BORA  --------------------------
+cd SUPERCOMPUTING
+git pull
+exit
 ```
+
+#### Reflection
