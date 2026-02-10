@@ -3,7 +3,7 @@
 ### Task 1
 
 ```bash
-#------------------------- Starting LOCALLY  --------------------------
+#------------------------- STARTING LOCALLY  --------------------------
 
 # Start at SUPERCOMPUTER folder, I was already in the directory containing SUPERCOMPUTING
 cd ~/SUPERCOMPUTING
@@ -15,7 +15,7 @@ git pull
 bora
 # Enter password
 
-#------------------------------ Via BORA  -----------------------------
+#------------------------------ VIA BORA  -----------------------------
 
 # Within Bora, enter our directory
 cd SUPERCOMPUTING/
@@ -52,35 +52,38 @@ git push
 # Exit from Bora
 exit
 
-#------------------------- Now LOCALLY  --------------------------
+```
+### Task 2
+
+The following did not work to complete Task 2; skip to GUI FTP
+
+``` bash
+
+#------------------------- NOW LOCALLY  --------------------------
+
 # Sync with git
 git pull
 
-# The following did not work
+# Log into FTP for NCBI
+ftp ftp.ncbi.nlm.nih.gov
 
-# # Log into FTP for NCBI
-# ftp ftp.ncbi.nlm.nih.gov
+# use "anonymous" as user and email address as password
 
-# # use "anonymous" as user and email address as password
+#------------------------- COMMAND-LINE FTP  --------------------------
 
-# #------------------------- Now FTP  --------------------------
+# Navigate to the desired directory
+cd genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2
 
-# # Navigate to the desired directory
-# cd genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2
+# try to get the files
 
-# # try to get the files
+get GCF_000005845.2_ASM584v2_genomic.fna.gz 
 
-# get GCF_000005845.2_ASM584v2_genomic.fna.gz 
-
-# bye
+bye
 
 ``` 
 
-### Task 2
-
-------------------------- GUI FTP  --------------------------
-
-- Opened Filezilla, connected to  ftp.ncbi.nlm.nih.gov server (anonymous as user, wm email as pass)
+#### GUI FTP via Filezilla
+- Opened Filezilla, connected to ftp.ncbi.nlm.nih.gov server (anonymous as user, wm email as pass)
 - Navigated to genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2 directory
 - Found the 2 desired files: GCF_000005845.2_ASM584v2_genomic.gff.gz and GCF_000005845.2_ASM584v2_genomic.fna.gz
 - Dragged the files over to ~/SUPERCOMPUTING/assignments/assignment_02/data 
@@ -88,7 +91,9 @@ git pull
 
 ### Task 3
 ```bash
-#------------------------- Now LOCALLY  --------------------------
+
+#-------------------------  LOCALLY  --------------------------
+
 # Verify data is present in assignment_02/data 
 ls
 
@@ -107,6 +112,7 @@ bora
 # Enter password
 
 # ------------------------- VIA BORA --------------------------
+
 # Move the newly added data files into the SUPERCOMPUTING/assignments/assignment_02/data directory
 mv GCF_000005845.2_ASM584v2_genomic.fna.gz SUPERCOMPUTING/assignments/assignment_02/data
 mv GCF_000005845.2_ASM584v2_genomic.gff.gz SUPERCOMPUTING/assignments/assignment_02/data
@@ -139,6 +145,7 @@ exit
 ### Task 4
 
 ```bash
+
 #------------------------- Now LOCALLY  --------------------------
 
 # Check hashes of the 2 data files that we pulled from NCBI
@@ -154,6 +161,7 @@ bora
 # Enter password
 
 # ------------------------- VIA BORA --------------------------
+
 # Git pull to sync changes
 cd SUPERCOMPUTING
 git pull
@@ -204,7 +212,8 @@ exit
 - d: changes dir to the previous dir, clears, prints new current working dir, listing all files (including hidden) in human-readable long format
 - ll: lists all files in current dir (including hidden) in human-readable long format
 
-------------------------- Now LOCALLY  --------------------------
+-------------------------  LOCALLY  --------------------------
+
 ```bash
 # Git pull to sync changes
 cd
