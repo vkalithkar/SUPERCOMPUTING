@@ -85,7 +85,7 @@ bye
 
 ``` 
 
-#### <u>GUI FTP via Filezilla:</u>
+#### GUI FTP via Filezilla:
 - Opened Filezilla, connected to ftp.ncbi.nlm.nih.gov server (anonymous as user, wm email as pass)
 - Navigated to genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2 directory
 - Found the 2 desired files: GCF_000005845.2_ASM584v2_genomic.gff.gz and GCF_000005845.2_ASM584v2_genomic.fna.gz
@@ -210,7 +210,7 @@ source ~/.bashrc
 exit
 ```
 
-#### <u>Description of Useful Aliases:</u>
+#### Description of Useful Aliases:
 - u: changes dir to parent, clears, prints new current working dir, listing all files (including hidden) in human-readable long format
 - d: changes dir to the previous dir, clears, prints new current working dir, listing all files (including hidden) in human-readable long format
 - ll: lists all files in current dir (including hidden) in human-readable long format
@@ -237,5 +237,5 @@ git pull
 exit
 ```
 
-#### <u>Reflection:</u>
+#### Reflection:
 I find that I feel much more comfortable with the bash program/syntax usage, and I'm able to work and navigate much faster. The one thing that didn't work during this assignment was using command-line FTP to communicate with NCBI servers, due to the Windows fire wall issue. The Filezilla approach was successful. The actual only difficulty I was having was with keeping my memory straight between what was being pushed to the GitHub repository via my local machine and change made to the cloned repo on Bora. So far, I've only had to handle one merge conflict (forgot to git pull) but have learned my lesson since. The only thing I would change is probably adding a sort of Task/Subtask to the Assignment_02 document to add the data folder (within assignment_02) to the .gitignore, since it's not immediately obvious. However, I know it's bad practice to push data to GitHub, so I went ahead and made that change.
