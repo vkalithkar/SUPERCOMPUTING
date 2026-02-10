@@ -1,7 +1,7 @@
 ## Command Log
-Vandana Kalithkar
-02/10/2026
-Assignment 2
+Vandana Kalithkar 
+02/10/2026  
+Assignment 2   
 <br />
 ### Task 1
 
