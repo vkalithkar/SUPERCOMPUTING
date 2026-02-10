@@ -4,7 +4,7 @@
 02/10/2026  
 
 ## Command Log
-### Task 1:
+### Task 1: Set Up Your Semester Workspace on the HPC
 ```bash
 #------------------------- STARTING LOCALLY  --------------------------
 
@@ -56,9 +56,9 @@ git push
 exit
 
 ```
-### Task 2:
+### Task 2: Download Files from NCBI via Command-Line FTP
 
-The following did not work to complete Task 2; skip to GUI FTP
+The following did not work to complete Task 2; switched to GUI FTP
 (Git Bash FTP client failed due to Windows PORT issues, so I used FileZilla to complete the transfer as permitted)
 ``` bash
 
@@ -92,7 +92,7 @@ bye
 - Dragged the files over to ~/SUPERCOMPUTING/assignments/assignment_02/data 
 
 
-### Task 3:
+### Task 3: File Transfer and Permissions
 ```bash
 
 #-------------------------  LOCALLY  --------------------------
@@ -145,7 +145,7 @@ ls -l
 
 exit
 ```
-### Task 4:
+### Task 4: Verify File Integrity with md5sum
 
 ```bash
 
@@ -185,7 +185,7 @@ md5sum GCF_000005845.2_ASM584v2_genomic.gff.gz
 ```
 The hashes directly match 1-1, file integrity is intact
 
-### Task 5: 
+### Task 5: Create Useful Bash Aliases
 ```bash
 # Return back to home directory /sciclone/home/vkalithkar
 cd
@@ -236,6 +236,7 @@ cd SUPERCOMPUTING
 git pull
 exit
 ```
+### Task 6: Documentation
 
 #### Reflection:
 I find that I feel much more comfortable with the bash program/syntax usage, and I'm able to work and navigate much faster. The one thing that didn't work during this assignment was using command-line FTP to communicate with NCBI servers, due to the Windows fire wall issue. The Filezilla approach was successful. The actual only difficulty I was having was with keeping my memory straight between what was being pushed to the GitHub repository via my local machine and change made to the cloned repo on Bora. So far, I've only had to handle one merge conflict (forgot to git pull) but have learned my lesson since. The only thing I would change is probably adding a sort of Task/Subtask to the Assignment_02 document to add the data folder (within assignment_02) to the .gitignore, since it's not immediately obvious. However, I know it's bad practice to push data to GitHub, so I went ahead and made that change.
