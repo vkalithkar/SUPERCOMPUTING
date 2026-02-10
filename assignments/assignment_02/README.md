@@ -135,11 +135,11 @@ chmod a+r GCF_000005845.2_ASM584v2_genomic.fna.gz
 ls -l
 
 exit
-#------------------------- Now LOCALLY  --------------------------
 ```
 ### Task 4
 
 ```bash
+#------------------------- Now LOCALLY  --------------------------
 
 # Check hashes of the 2 data files that we pulled from NCBI
 md5sum GCF_000005845.2_ASM584v2_genomic.fna.gz
@@ -171,9 +171,8 @@ md5sum GCF_000005845.2_ASM584v2_genomic.fna.gz
 md5sum GCF_000005845.2_ASM584v2_genomic.gff.gz
 # Output
 # 2238238dd39e11329547d26ab138be41  GCF_000005845.2_ASM584v2_genomic.gff.gz
-
-# The hashes directly match 1-1, file integrity is intact
 ```
+The hashes directly match 1-1, file integrity is intact
 
 ### Task 5
 ```bash
@@ -204,3 +203,16 @@ exit
 - u: changes dir to parent, clears, prints new current working dir, listing all files (including hidden) in human-readable long format
 - d: changes dir to the previous dir, clears, prints new current working dir, listing all files (including hidden) in human-readable long format
 - ll: lists all files in current dir (including hidden) in human-readable long format
+
+------------------------- Now LOCALLY  --------------------------
+```bash
+# Git pull to sync changes
+cd
+cd SUPERCOMPUTING
+git pull
+
+# Add, commit, push changes (changes to this README.md in assignment_02)
+git add -A
+git commit -m "assignment_02 README.md update"
+git push
+```
