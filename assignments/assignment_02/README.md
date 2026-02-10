@@ -15,8 +15,14 @@ bora
 
 #------------------------------ Via BORA  -----------------------------
 
-# Within Bora, enter assignment directory
-cd SUPERCOMPUTING/assignments/assignment_02/
+# Within Bora, enter our directory
+cd SUPERCOMPUTING/
+
+# Sync with git
+git pull
+
+# Enter assignment directory
+cd assignments/assignment_02/
 
 # Check if data folder exists
 ls
@@ -48,12 +54,28 @@ exit
 # Sync with git
 git pull
 
-# Log into FTP for NCBI
-ftp ftp.ncbi.nlm.nih.gov
+# The following did not work
 
-# use "anonymous" as user and email address as password
+# # Log into FTP for NCBI
+# ftp ftp.ncbi.nlm.nih.gov
 
-#------------------------- Now FTP  --------------------------
+# # use "anonymous" as user and email address as password
 
-# Navigate to the desired directory
-cd genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2
+# #------------------------- Now FTP  --------------------------
+
+# # Navigate to the desired directory
+# cd genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2
+
+# # try to get the files
+
+# get GCF_000005845.2_ASM584v2_genomic.fna.gz 
+
+# bye
+
+'''
+
+------------------------- GUI FTP  --------------------------
+
+- Opened Filezilla, connected to  ftp.ncbi.nlm.nih.gov server
+- Navigated to genomes/all/GCF/000/005/845/GCF_000005845.2_ASM584v2 directory
+- Found the 2 desired files: GCF_000005845.2_ASM584v2_genomic.gff.gz and GCF_000005845.2_ASM584v2_genomic.fna.gz
