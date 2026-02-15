@@ -4,4 +4,5 @@ assignments/assignment_01/data
 # Ignore data from assignment_02
 assignments/assignment_02/data
 
-#small change
+# Ignore data from assignment_03
+assignments/assignment_03/data
