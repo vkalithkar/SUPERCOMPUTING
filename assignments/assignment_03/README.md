@@ -23,7 +23,7 @@ mkdir data
 cd ..
 cd ..
 
-# Add assignment_02 data folder to .gitignore
+# Add assignment_03 data folder to .gitignore
 nano .gitignore
 
 # Add this line to the .gitignore, save, exit
@@ -105,9 +105,9 @@ grep -v "^>" GCF_000001735.4_TAIR10.1_genomic.fna | head -n 3 | awk '{print leng
 # output: 30427672 19698290 23459831
 
 # 7. How many nucleotides are in the sequence for 'chromosome 5'? (answer=26,975,503)
-#
-
-# output:
+# The 10th line in the file is associated with the sequence for chromosome 5, so use the head/tail commands to grab that particular line and then use wc to find the number of chars
+head -n 10 GCF_000001735.4_TAIR10.1_genomic.fna | tail -n 1 | wc -c
+# output: 26975503
 
 # 8. How many sequences contain "AAAAAAAAAAAAAAAA"? (answer=1)
 # Count the number of time the specific string "AAAAAAAAAAAAAAAA" appears in the file, then pipe it into the wc function and count the number of lines
@@ -115,15 +115,15 @@ grep "AAAAAAAAAAAAAAAA" GCF_000001735.4_TAIR10.1_genomic.fna | wc -l
 # output: 1
 
 # 9. If you were to sort the sequences alphabetically, which sequence (header) would be first in that list? (answer=>NC_000932.1...)
-#
-
-# output:
+# I figured that some type of sort program existed, used the --help command to learn about it. I grabbed the sequence headers using the grep command I referenced in #1, put this command into a command sub. to make an imaginary file, sorted the file as per the sort --help said, and used head to grab the first line of that file output
+sort <(grep "^>" GCF_000001735.4_TAIR10.1_genomic.fna) | head -n 1
+# output: NC_000932.1 Arabidopsis thaliana chloroplast, complete genome
 
 
 # 10. How would you make a new tab-separated version of this file, where the first column is the headers and the second column are the associated sequences? (show the command(s))
-#
-
-# output:
+# Use the paste program to paste the grep command from #1 (grab the headers only) with the grep from #2 (non-header lines, only seqs)
+paste <(grep "^>" GCF_000001735.4_TAIR10.1_genomic.fna) <(grep -v "^>" GCF_000001735.4_TAIR10.1_genomic.fna)
+# output: (too long to show)
 
 ```
 ### Task 5: Write a reflection in your README.md
