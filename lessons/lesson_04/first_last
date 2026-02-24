@@ -1,0 +1,6 @@
+#!/bin/bash
+set -ueo pipefail
+
+#paste <(head -n 1 $1) <(tail -n 1 $1)
+head -n 1 $1
+tail -n 1 $1
