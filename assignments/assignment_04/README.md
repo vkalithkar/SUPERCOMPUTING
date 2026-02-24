@@ -82,7 +82,8 @@ bash install_gh.sh
 ### Task 5. Add the location of the gh binary to your $PATH
 ```bash
 # Add to PATH temporarily
-export PATH=$PATH:$HOME/programs/gh_2.74.2_linux_amd64/bin
+export PATH=$PATH:/sciclone/home/vkalithkar/programs/gh_2.74.2_linux_amd64/bin
+
 gh --version
 # Output: gh version 2.74.2 (2025-06-18)
 # Output: https://github.com/cli/cli/releases/tag/v2.74.2
@@ -93,7 +94,7 @@ nano .bashrc
 
 # Add these lines to the end of .bashrc, then read out (ctrl+o), enter, exit (ctrl+x)
 # Assignment 4 Task 5 adding gh alias 2/20/26
-export PATH=$PATH:$HOME/programs/gh_2.74.2_linux_amd64/bin
+export PATH=$PATH:/sciclone/home/vkalithkar/programs/gh_2.74.2_linux_amd64/bin
 
 exec bash
 
