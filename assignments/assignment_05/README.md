@@ -46,6 +46,7 @@ nano .gitignore
 # ------------------------------------------------------------
 # Ignore data from assignment_05
 assignments/assignment_05/data
+assignments/assignment_05/log
 # ------------------------------------------------------------
 
 ```
@@ -212,6 +213,9 @@ Reflection:
 ### Task 8. Push to GitHub
 
 ```bash
+git add -A
+git commit -m"A5 README update"
+git push
 
 ```
 
