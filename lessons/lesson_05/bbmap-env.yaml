@@ -1,0 +1,6 @@
+name: bbmap-env
+channels:
+  - conda-forge
+dependencies:
+  - bbmap
+prefix: /sciclone/home/vkalithkar/.conda/envs/bbmap-env
