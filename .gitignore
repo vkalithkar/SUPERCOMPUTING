@@ -20,3 +20,7 @@ assignments/assignment_05/log
 # Ignore data from assignment_06
 assignments/assignment_06/data
 assignments/assignment_06/assemblies
+
+# Ignore data from lesson_06
+lessons/lesson_06/ecoli_bl21de3.fasta
+lessons/lesson_06/lambda_reads.fastq
