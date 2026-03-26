@@ -294,6 +294,8 @@ for FWD_IN in ${CLEAN_DIR}/*_1.fastq; do
     # Where alignment results will be saved for those reads mapped to dog genome 
     MATCH_SAM="${OUT_DIR}/${SAMPLE}_dog-matches.sam"
 
+    echo "Starting Mapping for ${SAMPLE}"
+
     # Run bbmap to map
     bbmap.sh \
         ref=${DOG_GENOME} \
@@ -302,8 +304,10 @@ for FWD_IN in ${CLEAN_DIR}/*_1.fastq; do
         out=${FULL_SAM} \
         minid=0.95 \
         -Xmx28g
-    
-    samtools view -S -F 4 ${FULL_SAM} > ${MATCH_SAM} 
+
+    echo "Extracting ref dog matches for ${SAMPLE}"
+    samtools view -F 4 ${FULL_SAM} > ${MATCH_SAM} 
+    rm "${FULL_SAM}" # This step is needed or else I cannot save all the data
     
 done
 
@@ -371,9 +375,26 @@ tail -n 30 output/assignment_07.err
 
 ### Task 8. Inspect your results
 ```bash
-grep -c "^@SRR" data/clean/*_1.fastq
+echo -e "Sample ID\tTotal Reads\tDog-Mapped Reads"
+
+for file in data/clean/*_1.fastq; do
+    # Get the sample name 
+    SAMPLE=$(basename ${file} _1.fastq)
+
+    # Get the total num reads (each starts with @SRR)
+    TOTAL_READS=$(cat ${file} | grep -c "^@SRR")
+
+    # Get total num of dog-mapped reads from SAM file
+    MAPPED_FILE="output/${SAMPLE}_dog-matches.sam"
+    MAPPED_READS=$(grep -vc "^@" "${MAPPED_FILE}") 
+
+    echo -e ${SAMPLE}\t${TOTAL_READS}\t${MAPPED_READS}
+done
 
 ```
+Table output:
+
+
 
 ### Task 9. Document Everything in README.md
 
@@ -382,7 +403,7 @@ grep -c "^@SRR" data/clean/*_1.fastq
 ### Overview
 This project provides a fully automated Slurm-based pipeline for processing human skin metagenomic sequencing data, checking for cross-species alignment. It is designed to download raw FASTQ data from the NCBI Sequence Read Archive (SRA) representing the human skin virome metagenomic data, perform quality control, and quantify sequences that map to the Canis familiaris (Dog) reference genome. 
 
-This comparison may identify environmental canine DNA contamination within human skin microbial community metagenomic samle.
+This comparison may identify environmental canine DNA contamination within human skin microbial community metagenomic sample.
 
 ### Directory Structure
 * `./scripts/`: Contains the functional worker scripts
@@ -397,7 +418,7 @@ This comparison may identify environmental canine DNA contamination within human
      * `SraRunTable.csv`: Metadata file containing the SRA Accession IDs for the human skin samples
 
 * `./output/`: Storage destination for results
-    * Contains `*_dog-matches.sam` files (Human reads that successfully mapped to the Dog genome)
+    * Contains `*_dog-matches.sam` file (Human reads that successfully mapped to the Dog genome)
     * Stores the `.out` and `.err` logs for pipeline auditing and resource monitoring
 
 * `assignment_07_pipeline.slurm`: The master script that manages environment setup, data gathering, and loops through the sample metadata
@@ -419,7 +440,7 @@ The `assignment_07_pipeline.slurm` script automates the following stages sequent
 2. **Data Acquisition:** It calls `01_download_data.sh` to fetch human skin virome datasets from the NCBI Sequence Read Archive. Then, it retrieves the *Canis familiaris* (Dog) reference genome and prepares it for alignment.
 3. **Quality Control:** The script passes the raw human-derived reads to `02_clean_reads.sh`. Using `fastp`, it trims low-quality bases.
 4. **Cross-Species Mapping:** Using `bbmap` and `samtools` via `03_map_reads.sh`, the pipeline performs an alignment of the human skin virome sequences against the canine reference genome. 
-5. **Cleanup:** The script automatically deletes the produced `ref` folder leaving only the filtered results.
+5. **Cleanup:** The script automatically deletes the produced `ref` folder leaving only the filtered results and removes the intermediate full SAM files.
 6. **Logging:** All standard output and errors are redirected to the `output/` directory, providing a record of the mapping percentages and tool log for every sample in the `SraRunTable.csv`.
 
 ## Reflection:
