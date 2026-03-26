@@ -7,3 +7,7 @@ Archive:  /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/dat
   inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/ncbi_dataset/data/dataset_catalog.json  
   inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/md5sum.txt  
 Step 2: Running quality control on reads
+Step 3: Aligning to reference genome + filtering matches
+Starting Mapping for SRR27883923
+Extracting ref dog matches for SRR27883923
+Starting Mapping for SRR27883924

@@ -34,6 +34,8 @@ for FWD_IN in ${CLEAN_DIR}/*_1.fastq; do
     # Where alignment results will be saved for those reads mapped to dog genome 
     MATCH_SAM="${OUT_DIR}/${SAMPLE}_dog-matches.sam"
 
+    echo "Starting Mapping for ${SAMPLE}"
+
     # Run bbmap to map
     bbmap.sh \
         ref=${DOG_GENOME} \
@@ -41,9 +43,11 @@ for FWD_IN in ${CLEAN_DIR}/*_1.fastq; do
         in2=${REV_IN} \
         out=${FULL_SAM} \
         minid=0.95 \
-        -Xmx28g
-    
-    samtools view -S -F 4 ${FULL_SAM} > ${MATCH_SAM} 
+        -Xmx40g
+
+    echo "Extracting ref dog matches for ${SAMPLE}"
+    samtools view -F 4 ${FULL_SAM} > ${MATCH_SAM} 
+    rm "${FULL_SAM}" # This step is needed or else I cannot save all the data
     
 done
 
