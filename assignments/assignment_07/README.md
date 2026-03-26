@@ -228,7 +228,7 @@ for FWD_IN in ${CLEAN_DIR}/*_1.fastq; do
         in2=${REV_IN} \
         out=${FULL_SAM} \
         minid=0.95 \
-        -Xmx16g
+        -Xmx40g
 
 done
 
@@ -333,8 +333,8 @@ nano assignment_07_pipeline.slurm
 #SBATCH --nodes=1 # how many physical machines in the cluster
 #SBATCH --ntasks=1 # how many separate 'tasks' (stick to 1)
 #SBATCH --cpus-per-task=8 # how many cores (bora max is 20)
-#SBATCH --time=8:00:00 # d-hh:mm:ss or just No. of minutes
-#SBATCH --mem=32G # how much physical memory (all by default)
+#SBATCH --time=12:00:00 # d-hh:mm:ss or just No. of minutes
+#SBATCH --mem=48G # how much physical memory (all by default)
 #SBATCH --mail-type=FAIL,BEGIN,END # when to email you
 #SBATCH --mail-user=vkalithkar@wm.edu # who to email
 #SBATCH -o output/assignment_07.out #STDOUT to file (%j is jobID)
@@ -360,7 +360,7 @@ echo "Full A7 Pipeline Execution Finished."
 chmod +x assignment_07_pipeline.slurm 
 
 # Run and pray.
-sbatch assignment_07_pipeline.slurm
+sbatch assignment_07_pipeline.slurm # timed out under 8 hours and 32gb
 
 # Is my script running?
 sacct
@@ -375,25 +375,31 @@ tail -n 30 output/assignment_07.err
 
 ### Task 8. Inspect your results
 ```bash
+# Since my script timed out
+# - manually removed ref folder (rm -rf ref)
+# - it finished mapping one sample (produced SRR27883923_dog-matches.sam) and started another (SRR27883924.sam) 
+# - Increased sbatch time to 12 hrs and mem to 48gb, and mapping script to -Xmx40g
+
 echo -e "Sample ID\tTotal Reads\tDog-Mapped Reads"
 
-for file in data/clean/*_1.fastq; do
+for file in output/*_dog-matches.sam; do
     # Get the sample name 
-    SAMPLE=$(basename ${file} _1.fastq)
+    SAMPLE=$(basename ${file} _dog-matches.sam)
 
     # Get the total num reads (each starts with @SRR)
-    TOTAL_READS=$(cat ${file} | grep -c "^@SRR")
+    CLEAN_FILE="data/clean/${SAMPLE}_1.fastq"
+    TOTAL_READS=$(grep -c "^@SRR" "${CLEAN_FILE}")
 
     # Get total num of dog-mapped reads from SAM file
-    MAPPED_FILE="output/${SAMPLE}_dog-matches.sam"
-    MAPPED_READS=$(grep -vc "^@" "${MAPPED_FILE}") 
+    MAPPED_READS=$(cat ${file} | wc -l) 
 
-    echo -e ${SAMPLE}\t${TOTAL_READS}\t${MAPPED_READS}
+    echo -e "${SAMPLE}\t${TOTAL_READS}\t${MAPPED_READS}"
 done
 
 ```
 Table output:
-
+Sample ID       Total Reads     Dog-Mapped Reads
+SRR27883923     9979226 6921
 
 
 ### Task 9. Document Everything in README.md
@@ -454,3 +460,4 @@ git add -A
 git commit -m "A7 README update"
 git push
 ```
+
