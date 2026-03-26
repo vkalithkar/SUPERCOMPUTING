@@ -23,3 +23,8 @@ assignments/assignment_06/assemblies
 
 # Ignore data from lesson_06
 lessons/lesson_06/data
+
+# Ignore data from assignment_07
+assignments/assignment_07/data/clean
+assignments/assignment_07/data/raw
+assignments/assignment_07/data/dog_reference

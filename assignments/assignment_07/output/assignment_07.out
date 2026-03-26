@@ -1,0 +1,9 @@
+Step 1: Downloading SRA data and reference genome
+All raw data downloaded.
+Archive:  /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/dog_reference_genome.zip
+  inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/README.md  
+  inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/ncbi_dataset/data/assembly_data_report.jsonl  
+  inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/ncbi_dataset/data/GCF_011100685.1/GCF_011100685.1_UU_Cfam_GSD_1.0_genomic.fna  
+  inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/ncbi_dataset/data/dataset_catalog.json  
+  inflating: /sciclone/home/vkalithkar/SUPERCOMPUTING/assignments/assignment_07/data/dog_reference/md5sum.txt  
+Step 2: Running quality control on reads
