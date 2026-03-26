@@ -31,6 +31,7 @@ nano .gitignore
 assignments/assignment_07/data/clean
 assignments/assignment_07/data/raw
 assignments/assignment_07/data/dog_reference
+assignments/assignment_07/output
 # ------------------------------------------------------------
 
 # Enter A7 dir
